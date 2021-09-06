@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const DbURI = process.env.ATLAS_URI;
 
 module.exports = {
-    connectToServer: async function () {
+    connectDb: async function () {
         mongoose.connect(DbURI, { useNewUrlParser: true, useUnifiedTopology: true, });
         const db = mongoose.connection;
         db.on("error", function(){
